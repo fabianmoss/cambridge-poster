@@ -91,31 +91,27 @@
   \begin{columns}[t]
     \begin{column}{0.3\textwidth}
       \begin{block}{Background}
-        Pitch-class statistics in pieces are assumed to correspond to mental representations of tonality \cite{Huron2006}.
+        Pitch-class statistics in pieces correspond to mental representations of tonality \cite{Huron2006}.
+
+        \begin{figure}
+          \centering
+          \includegraphics[width=\textwidth]{img/templates}
+        \end{figure}
       \end{block}
 
-      \vspace{5em}
-
-      \begin{block}{References}
-          \printbibliography
+      \begin{block}{Improvement 1}
+        Use models of tonal pitch space to reveal further regularities in pitch-class distributions \autocite{Harasim2019}.
+        \begin{figure}
+          \centering
+          \includegraphics[width=\textwidth]{img/radars}
+        \end{figure}
       \end{block}
 
-      \begin{block}{Acknowledgements}
+      \vspace{2em}
 
-        \begin{wrapfigure}{l}{.4\textwidth}
-          \includegraphics[width=.4\textwidth]{img/Logo_EPFL.pdf}
-        \end{wrapfigure}
-
-        \small
-        The research presented on this poster is generously
-        supported by EPFL through the Latour Chair in Digital Musicology.
-      \end{block}
     \end{column}
 
     \begin{column}{0.3\textwidth}
-      \begin{block}{Improvement 1}
-        Use models of tonal pitch space to reveal further regularities in pitch-class distributions \autocite{Harasim2019}
-      \end{block}
 
       \begin{block}{Improvement 2}
         \blindtext
@@ -124,68 +120,6 @@
     \end{column}
 
     \begin{column}{0.3\textwidth}
-      \begin{block}{Basic Algorithm}
-        The algorithm for enumerating skipgrams takes as input:
-
-        \begin{itemize}
-        \item a list $L$ of objects to generate skipgrams over
-        \item a skip function $f$ on pairs of objects
-        \item the skipgram length $n$
-        \item the skip limit $k$
-        \end{itemize}
-
-        The list $L$ must be ordered with respect to the skip function:
-        \[\forall i < j < k: f(L_i,L_j) \leq f(L_i,L_z).\]
-
-        The algorithm returns all sublists $x$ of $L$ with $|x| = n$ and
-        $\sum_i f(x_i,x_{i+1}) \leq k$.
-
-        $L$ is traversed, building up a \alert{list of prefixes}
-        that eventually become complete skipgrams.
-
-        For each element $e$ in $L$:
-        \begin{enumerate}
-        \item remove old prefixes that cannot be extended with $e$
-        \item extend all remaining prefixes with $e$%; of those:
-          %\begin{enumerate}
-          \item output all completed prefixes (length $n$)
-          \item add all incomplete prefixes to the prefix list
-          %\end{enumerate}
-        \item add a new prefix $[e]$.
-        \end{enumerate}
-
-        \begin{adjustbox}{scale=2,center,margin=0 1ex}
-          \begin{tikzpicture}
-            \begin{scope}[scale=0.3]
-              \pianoroll
-              \draw[fill=epflgray] (1,-0.4) rectangle (2,0);
-              \draw[fill=epflgray] (2,2) rectangle (2.5,2.4);
-            \end{scope}
-
-            \begin{scope}[scale=0.3,yshift=4cm]
-              \fill[epfllightgray] (-0.25,-1) rectangle (8.25,3);
-              \pianoroll
-              \draw[fill=epflred] (0,2) rectangle (1,2.4);
-              \draw[fill=epflred] (2,2) rectangle (2.5,2.4);
-            \end{scope}
-
-            \begin{scope}[scale=0.3,yshift=8cm]
-              \pianoroll
-              \draw[fill=epflgray] (1,-0.4) rectangle (2,0);
-              \draw[fill=epflgray] (1,2.4) rectangle (2,2.8);
-            \end{scope}
-
-            \draw (2.75,-0.4) -- (2.75,3.2);
-
-            \begin{scope}[xshift=3cm,yshift=0.4cm]
-              \pianoroll
-              \draw[fill=epflgray] (0,2) rectangle (1,2.4);
-              \draw[fill=epflgray] (2,2) rectangle (2.5,2.4);
-              \draw[fill=epflred] (3,1.2) rectangle (3.5,1.6);
-            \end{scope}
-          \end{tikzpicture}
-        \end{adjustbox}
-      \end{block}
 
       \begin{block}{Extensions}
         Efficient \alert{filtering} can be implemented
@@ -205,6 +139,21 @@
         completed skipgrams are first entered in a \alert{priority queue}.
         In each iteration, only those skipgrams are taken from the queue
         that cannot be preceded by currently active prefixes anymore.
+      \end{block}
+
+      \begin{block}{References}
+          \printbibliography
+      \end{block}
+
+      \begin{block}{Acknowledgements}
+
+        \begin{wrapfigure}{l}{.4\textwidth}
+          \includegraphics[width=.4\textwidth]{img/Logo_EPFL.pdf}
+        \end{wrapfigure}
+
+        \small
+        The research presented on this poster is generously
+        supported by EPFL through the Latour Chair in Digital Musicology.
       \end{block}
 
     \end{column}
