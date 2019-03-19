@@ -86,100 +86,41 @@
 
 \begin{frame}[t]
 
+  \begin{minipage}[t][.56\textheight][t]{\textwidth}
+
   \begin{columns}[t]
     \begin{column}{0.3\textwidth}
       \begin{block}{Background}
-        Many aspects of music are oriented \alert{vertically}
-        (harmony), \alert{horizontally} (melody), or both (voice
-        leading).  However, the structure of music is neither cleanly
-        vertical nor horizontal, but rather irregular in both
-        dimensions.
-
-        \begin{adjustbox}{scale=2.7,center,margin=0 1ex}
-          \begin{tikzpicture}
-            \begin{scope}[color=epflred,thick,->,>=stealth]
-              \draw[<->] (1.5,2.2) -- (1.5,0.2);
-              \draw (4.5,1.8) -- (5.5,2.2);
-              \draw (5.5,2.2) -- (6.25,1.8);
-              \draw (6.25,1.8) -- (6.75,1.4);
-            \end{scope}
-
-            \pianoroll
-          \end{tikzpicture}
-        \end{adjustbox}
-
-        Vertical structure is usually enforced by \alert{slicing}.
-        This can be problematic for cutting through notes and in cases
-        where vertically related notes do not overlap (and thus do not
-        have a common slice).
-
-        \begin{adjustbox}{scale=2.7,center,margin=0 1ex}
-          \begin{tikzpicture}
-            \foreach \x in {0,1,2,2.5,3,3.5,4,5,6,6.5,7.5,8}
-              \draw[color=epflred] (\x,-1) -- (\x,3);
-            \pianoroll
-          \end{tikzpicture}
-        \end{adjustbox}
-
-        Horizontal structure is often ensured by working on
-        \alert{monophonic voices} or just a single \alert{melody}.
-        This is impractical in the general case, e.g., in piano music.
-
-        \begin{adjustbox}{scale=2.7,center,margin=0 1ex}
-          \begin{tikzpicture}
-            \pianoroll
-            \draw[color=epflred,very thick] (0,0.4) -- (8,0.4);
-          \end{tikzpicture}
-        \end{adjustbox}
-
+        Pitch-class statistics in pieces are assumed to correspond to mental representations of tonality \cite{Huron2006}.
       \end{block}
 
       \vspace{5em}
 
-      \begin{block}{Acknowledgements}
-        % \small
-        The research presented on this poster is generously
-        supported by EPFL through the Latour Chair in Digital Musicology.  
+      \begin{block}{References}
+          \printbibliography
+      \end{block}
 
-        \includegraphics[width=\textwidth]{img/Logo_EPFL.pdf}
+      \begin{block}{Acknowledgements}
+
+        \begin{wrapfigure}{l}{.4\textwidth}
+          \includegraphics[width=.4\textwidth]{img/Logo_EPFL.pdf}
+        \end{wrapfigure}
+
+        \small
+        The research presented on this poster is generously
+        supported by EPFL through the Latour Chair in Digital Musicology.
       \end{block}
     \end{column}
 
     \begin{column}{0.3\textwidth}
       \begin{block}{Improvement 1}
-        We generalize the \alert{skipgram technique},
-        well known in linguistics \autocite{GuthrieCloserLookSkipGram2006}
-        and recently introduced to music research \autocite{SearsModelingHarmonySkipGrams2017}.
-        Skipgrams are similar to $n$-grams (fixed length subsequences of a sequence)
-        but allow a limited amount of \alert{gaps} between their elements.
-
-        If instead of counting gaps the \enquote{amount of skip} is defined by a
-        \alert{skip function}, the technique can be applied to non-sequential structures.
-        The skip function is applied to consecutive elements in the skipgram.
-        The summed skip must not exceed some parameter $k$.
-
-        Vertical structure can now be described by \alert{skipgrams over notes} in a piece.
-        An appropriate skip function could be the difference between the notes' onsets.
-        This generates fixed-size groups of notes with \alert{limited} (but possible)
-        \alert{non-simultaneity}.
-
-        Horizontal structure can be extracted much like vertical structure.
-        Additionally requiring the notes not to overlap enforces \alert{sequentiality}.
-
-        Horizontal and vertical structure can be combined
-        by \alert{recursive application of skipgrams}.
-        A first pass generates vertical structure as skipgrams over notes (\enquote{stages}).
-        A second step generates horizontal structure as skipgrams over stages,
-        resulting in a nested, two-dimensional pattern.
+        Use models of tonal pitch space to reveal further regularities in pitch-class distributions \autocite{Harasim2019}
       \end{block}
 
       \begin{block}{Improvement 2}
         \blindtext
       \end{block}
 
-      \begin{block}{Improvement 3}
-        \blindtext
-      \end{block}
     \end{column}
 
     \begin{column}{0.3\textwidth}
@@ -266,11 +207,23 @@
         that cannot be preceded by currently active prefixes anymore.
       \end{block}
 
-      \begin{block}{References}
-          \printbibliography
-      \end{block}
     \end{column}
   \end{columns}
+
+\end{minipage}
+
+\begin{minipage}[t][.3\textheight][t]{\textwidth}
+  \begin{block}{Historical Development}
+
+    \begin{figure}
+      \centering
+      \includegraphics{img/fifth_widths}
+      % \caption{}
+      % \label{}
+    \end{figure}
+
+  \end{block}
+\end{minipage}
 
 \end{frame} % End of the enclosing frame
 
