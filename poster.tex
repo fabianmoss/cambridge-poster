@@ -25,55 +25,7 @@
 \usepackage{qrcode}
 \usepackage{wrapfig}
 \usepackage{blindtext}
-
-\newcommand*{\pianoroll}{
-  \draw (0,2) rectangle (1,2.4);
-  \draw (1,2.4) rectangle (2,2.8);
-  \draw (2,2) rectangle (2.5,2.4);
-  \draw (2.5,1.6) rectangle (3,2);
-  \draw (3,1.2) rectangle (3.5,1.6);
-  \draw (3.5,0.8) rectangle (4,1.2);
-
-  \draw (4,1.6) rectangle (5,2);
-  \draw (5,2) rectangle (6,2.4);
-  \draw (6,1.6) rectangle (6.5,2);
-  \draw (6.5,1.2) rectangle (7,1.6);
-  \draw (7,0.8) rectangle (7.5,1.2);
-  \draw (7.5,0.4) rectangle (8,0.8);
-
-  \draw (1,-0.4) rectangle (2,0);
-  \draw (2,0) rectangle (4,0.4);
-  \draw (5,-0.8) rectangle (6,-0.4);
-  \draw (6,-0.4) rectangle (8,0);
-}
-
-\newcommand{\sgcross}[1]
-{
-  \begin{scope}[xshift=#1cm,thick,color=epflred]
-    \draw (0.35,0.1) -- (0.55,0.3);
-    \draw (0.55,0.1) -- (0.35,0.3);
-  \end{scope}
-}
-\newcommand{\sgbox}[1]
-{
-  \begin{scope}[xshift=#1cm]
-    \draw (0,0) rectangle (0.9,0.4);
-  \end{scope}
-}
-\newcommand{\sgboxfill}[2]
-{
-  \begin{scope}[xshift=#2cm]
-    \draw[fill=#1] (0,0) rectangle (0.9,0.4);
-  \end{scope}
-}
-\newcommand{\sgrow}[4][epflgray]
-{
-  \begin{scope}[yshift=#2cm]
-    \foreach \x in {0,...,8} { \sgbox{\x} }
-    \foreach \x in {#3} { \sgboxfill{#1}{\x} }
-    \foreach \x in {#4} { \sgcross{\x} }
-  \end{scope}
-}
+\usepackage{subcaption}
 
 \title{Inferring Tonality from Note Distributions: \\ Why Models Matter}
 
@@ -91,7 +43,7 @@
   \begin{columns}[t]
     \begin{column}{0.3\textwidth}
       \begin{block}{Background}
-        Pitch-class statistics in pieces correspond to mental representations of tonality \cite{Huron2006}.
+        \alert{Pitch-class statistics} in pieces correspond to mental representations of tonality \cite{Albrecht2013,Harasim2019,Krumhansl1982, Temperley2001}.
 
         \begin{figure}
           \centering
@@ -99,61 +51,69 @@
         \end{figure}
       \end{block}
 
-      \begin{block}{Improvement 1}
-        Use models of tonal pitch space to reveal further regularities in pitch-class distributions \autocite{Harasim2019}.
+      \begin{block}{Model 1: Circle of Fifths}
+        Use \alert{models of tonal pitch space} to reveal further regularities in pitch-class distributions \autocite{Harasim2019}.
         \begin{figure}
           \centering
-          \includegraphics[width=\textwidth]{img/radars}
+          \includegraphics[width=.9\textwidth]{img/radars}
         \end{figure}
       \end{block}
 
-      \vspace{2em}
+    \end{column}
+
+    \begin{column}{0.3\textwidth}
+
+      \begin{block}{Model 2: Line of Fifths}
+        Using \alert{spelled pitch classes} enables distinction between diatonic, chromatic, and enharmonic pieces \autocite{Gardonyi2002}.
+        \begin{figure}
+				\centering
+
+				\begin{subfigure}{\textwidth} % width of left subfigure
+					\includegraphics[width=\textwidth]{img/gmm_josquin.png}
+				\end{subfigure}
+
+				\vspace{1em} % here you can insert horizontal or vertical space
+
+				\begin{subfigure}{\textwidth} % width of left subfigure
+					\includegraphics[width=\textwidth]{img/gmm_bach.png}
+				\end{subfigure}
+
+				\vspace{1em} % here you can insert horizontal or vertical space
+
+				\begin{subfigure}{\textwidth} % width of right subfigure
+					\includegraphics[width=\textwidth]{img/gmm_schubert.png}
+				\end{subfigure}
+			\end{figure}
+      \end{block}
+
+			\begin{block}{Conclusion}
+        The often implicit or unconscious \alert{modeling assumptions about tonal spaces}
+        underlying both pitch-class distributions in musical pieces and cognitive schemata
+        greatly affect research outcomes. Making these assumptions explicit
+        as well as incorporating music-theoretical knowledge about the
+        structure of tonal spaces broadens incorporates modeling as an essential part
+        to the research on the history of tonality.
+
+      \end{block}
 
     \end{column}
 
     \begin{column}{0.3\textwidth}
 
-      \begin{block}{Improvement 2}
-        \blindtext
-      \end{block}
-
-    \end{column}
-
-    \begin{column}{0.3\textwidth}
-
-      \begin{block}{Extensions}
-        Efficient \alert{filtering} can be implemented
-        by \alert{testing a predicate} on every extension of a prefix.
-        If the new prefix does not satisfy the predicate, it is discarded.
-
-        \alert{Sampling} can be implemented efficiently
-        by \alert{flipping a coin} on every prefix extension,
-        deciding whether to keep or to discard the prefix.
-        A prefix is extended $n-1$ times,
-        so keeping each prefix with probability $\sqrt[n-1]{p}$
-        means keeping the skipgram with probability $p$.
-
-        The output order depends on the last element of each skipgram,
-        because the algorithm outputs skipgrams when they are completed.
-        If the \alert{order of the initial elements} should be retained,
-        completed skipgrams are first entered in a \alert{priority queue}.
-        In each iteration, only those skipgrams are taken from the queue
-        that cannot be preceded by currently active prefixes anymore.
-      \end{block}
-
-      \begin{block}{References}
-          \printbibliography
-      \end{block}
-
-      \begin{block}{Acknowledgements}
-
-        \begin{wrapfigure}{l}{.4\textwidth}
-          \includegraphics[width=.4\textwidth]{img/Logo_EPFL.pdf}
-        \end{wrapfigure}
-
-        \small
-        The research presented on this poster is generously
-        supported by EPFL through the Latour Chair in Digital Musicology.
+			\begin{block}{Model 3: Tonnetz}
+        More general models of tonal space reveal further developments in tonality.
+				\begin{figure}
+				\centering
+				\begin{subfigure}{\textwidth} % width of left subfigure
+					\includegraphics[width=\textwidth]{img/josquin_tonnetz.png}
+				\end{subfigure}
+				\begin{subfigure}{\textwidth} % width of left subfigure
+					\includegraphics[width=\textwidth]{img/bach_tonnetz.png}
+				\end{subfigure}
+				\begin{subfigure}{\textwidth} % width of right subfigure
+					\includegraphics[width=\textwidth]{img/schubert_tonnetz.png}
+				\end{subfigure}
+			\end{figure}
       \end{block}
 
     \end{column}
@@ -162,16 +122,38 @@
 \end{minipage}
 
 \begin{minipage}[t][.3\textheight][t]{\textwidth}
-  \begin{block}{Historical Development}
 
-    \begin{figure}
-      \centering
-      \includegraphics{img/fifth_widths}
-      % \caption{}
-      % \label{}
-    \end{figure}
+	\begin{columns}
+		\begin{column}{.6\textwidth}
+		  \begin{block}{Historical Development}
 
-  \end{block}
+		    \begin{figure}
+		      \centering
+		      \includegraphics[width=\textwidth]{img/fifth_widths}
+		      % \caption{}
+		      % \label{}
+		    \end{figure}
+
+		  \end{block}
+		\end{column}
+
+		\begin{column}{.3\textwidth}
+			\begin{block}{References}
+          \printbibliography
+      \end{block}
+
+      \begin{block}{Acknowledgements}
+
+        \begin{wrapfigure}{l}{.3\textwidth}
+          \includegraphics[width=.3\textwidth]{img/Logo_EPFL.pdf}
+        \end{wrapfigure}
+
+        \small
+        This research is generously supported by the Latour Chair in Digital Musicology at EPFL.
+      \end{block}
+		\end{column}
+
+\end{columns}
 \end{minipage}
 
 \end{frame} % End of the enclosing frame
