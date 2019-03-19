@@ -30,7 +30,7 @@
 
 \title{Inferring Tonality from Note Distributions: \\ Why Models Matter}
 
-\author{Fabian C. Moss\textsuperscript{\textasteriskcentered}, Martin Rohrmeier}
+\author{Fabian C. Moss and Martin Rohrmeier}
 
 \institute{Digital and Cognitive Musicology Lab, École Polytechnique Fédérale de Lausanne}
 
@@ -39,12 +39,12 @@
 
 \begin{frame}[t]
 
-  \begin{minipage}[t][.6\textheight][t]{\textwidth}
+  \begin{minipage}[t][.65\textheight][t]{\textwidth}
 
   \begin{columns}[t]
     \begin{column}{0.3\textwidth}
       \begin{block}{Background}
-        \alert{Pitch-class statistics} in pieces correspond to mental representations of tonality \cite{Albrecht2013,Harasim2019,Krumhansl1982, Temperley2001}.
+        \alert{Pitch-class statistics} in pieces correspond to \alert{cognitive representations} of tonality \cite{Albrecht2013,Harasim2019,Krumhansl1982, Temperley2001} and assumed to constitute the basis for statistical learning.
 
         \begin{figure}
           \centering
@@ -53,10 +53,10 @@
       \end{block}
 
       \begin{block}{Model 1: Circle of Fifths}
-        Use \alert{models of tonal pitch space} to reveal further regularities in pitch-class distributions \autocite{Harasim2019}.
+				\alert{Reordering} pitch classes by $x\mapsto 7x \mod 12$ and arranging them on the \alert{circle of fifths} emphasizes differences and similarities of the major and the minor mode \autocite{Harasim2019}. \textbf{IMPORTANCE OF THE FIFTH}
         \begin{figure}
           \centering
-          \includegraphics[width=.9\textwidth]{img/radars}
+          \includegraphics[width=.85\textwidth]{img/radars}
         \end{figure}
       \end{block}
 
@@ -65,7 +65,7 @@
     \begin{column}{0.3\textwidth}
 
       \begin{block}{Model 2: Line of Fifths}
-        Using \alert{spelled pitch classes} enables distinction between diatonic, chromatic, and enharmonic pieces \autocite{Gardonyi2002}.
+        Using \alert{spelled pitch classes} enables the distinction between diatonic, chromatic, and enharmonic pieces \autocite{Gardonyi2002} and indicates a historical trend towards expansion of the tonal material (see "Historical Development") \textbf{EXPANSION IN FIFTH-DIRECTION}.
         \begin{figure}
 				\centering
 
@@ -92,7 +92,7 @@
         underlying both pitch-class distributions in musical pieces and cognitive schemata
         greatly affect research outcomes. Making these assumptions explicit
         as well as incorporating music-theoretical knowledge about the
-        structure of tonal spaces broadens incorporates modeling as an essential part
+        structure of tonal spaces incorporates modeling as an integral part
         to the research on the history of tonality.
       \end{block}
 
@@ -107,6 +107,7 @@
 
 			\begin{block}{Model 3: Tonnetz}
         More general models of tonal space reveal further developments in tonality.
+				\textbf{EXPANSION IN THIRD-DIRECTION}
 				\begin{figure}
 				\centering
 				\begin{subfigure}{\textwidth} % width of left subfigure
@@ -123,15 +124,15 @@
 
 			\begin{block}{Acknowledgements \& Contact}
 
-        \begin{wrapfigure}{l}{.3\textwidth}
-          \includegraphics[width=.3\textwidth]{img/Logo_EPFL.pdf}
+        \begin{wrapfigure}{l}{.5\textwidth}
+					$\vcenter{\hbox{\includegraphics[width=.5\textwidth]{img/epfl.jpg}}}$
         \end{wrapfigure}
 
         \small
         This research is generously supported by the Latour Chair in Digital Musicology at EPFL.
 				\normalsize
 				\begin{center}
-					\faicon{twitter}\,/\,\faicon{github}\,fabianmoss \;|\; \faicon{envelope}\,fabian.moss@epfl.ch
+					\faicon{twitter}\;@fabianmoss \enspace|\enspace \faicon{envelope}\;fabian.moss@epfl.ch
 				\end{center}
       \end{block}
 
@@ -140,17 +141,17 @@
 
 \end{minipage}
 
-\begin{minipage}[t][.4\textheight][t]{\textwidth}
+\begin{minipage}[t][.3\textheight][t]{\textwidth}
 
 	\begin{columns}
 		\begin{column}{.6\textwidth}
 		  \begin{block}{Historical Development}
 
-		    \begin{figure}
+		    \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=\textwidth]{img/fifth_widths}
-		      % \caption{}
-		      % \label{}
+					\includegraphics[width=\textwidth]{img/fifth_widths}
+		      % \caption{Expansion of tonal material over the centuries.}
+		      % \label{fig:history}
 		    \end{figure}
 
 		  \end{block}
