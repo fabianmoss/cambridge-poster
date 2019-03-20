@@ -52,7 +52,7 @@
   \begin{columns}[t]
     \begin{column}{0.3\textwidth}
       \begin{block}{Background}
-        \alert{Pitch-class statistics} in pieces correspond to \alert{cognitive representations} of tonality \cite{Albrecht2013,Harasim2019,Krumhansl1982, Temperley2001} and assumed to constitute the basis for statistical learning.
+        \alert{Statistics of pitch classes} (PCs) in musical pieces correspond to \alert{cognitive representations} of tonality \cite{Albrecht2013,Harasim2019,Krumhansl1982, Temperley2001} and assumed to constitute the basis for statistical learning.
 
         \begin{figure}
           \centering
@@ -61,19 +61,25 @@
       \end{block}
 
       \begin{block}{Model 1: Circle of Fifths}
-				\alert{Reordering} pitch classes by $x\mapsto 7x \mod 12$ and arranging them on the \alert{circle of fifths} emphasizes differences and similarities of the major and the minor mode \autocite{Harasim2019}. \textbf{IMPORTANCE OF THE FIFTH}
+				\alert{Reordering} PCs by $x\mapsto 7x \mod 12$ and arranging them on the \alert{circle of fifths} emphasizes differences and similarities of the major and the minor mode \autocite{Harasim2019}.
         \begin{figure}
           \centering
-          \includegraphics[width=.85\textwidth]{img/radars}
+          \includegraphics[width=.8\textwidth]{img/radars}
         \end{figure}
+
+				In particular, the relation between in- and out-of-scale notes becomes apparent,
+				as well as the discrepancies between PCs 3 and 10 (minor) vs. 4 and 11 (major).
+
       \end{block}
+
 
     \end{column}
 
     \begin{column}{0.3\textwidth}
 
       \begin{block}{Model 2: Line of Fifths}
-        Using \alert{spelled pitch classes} enables the distinction between diatonic, chromatic, and enharmonic pieces \autocite{Gardonyi2002} and indicates a historical trend towards expansion of the tonal material (see "Historical Development") \textbf{EXPANSION IN FIFTH-DIRECTION}.
+        Using \alert{spelled PCs} enables the distinction between enharmonically equivalent notes
+				that is not possible when using only 12 PCs.
         \begin{figure}
 				\centering
 
@@ -81,18 +87,16 @@
 					\includegraphics[width=\textwidth]{img/gmm_josquin.png}
 				\end{subfigure}
 
-				\vspace{1em} % here you can insert horizontal or vertical space
-
 				\begin{subfigure}{\textwidth} % width of left subfigure
 					\includegraphics[width=\textwidth]{img/gmm_bach.png}
 				\end{subfigure}
-
-				\vspace{1em} % here you can insert horizontal or vertical space
 
 				\begin{subfigure}{\textwidth} % width of right subfigure
 					\includegraphics[width=\textwidth]{img/gmm_schubert.png}
 				\end{subfigure}
 			\end{figure}
+
+			Moreover, comparing pieces from different time periods indicates a historical trend towards expansion of the tonal material (see "Historical Development") and a transition from diatonicism to chromaticism and enharmonicism \autocite{Gardonyi2002}.
       \end{block}
 
 			\begin{block}{Conclusion}
@@ -114,8 +118,10 @@
     \begin{column}{0.3\textwidth}
 
 			\begin{block}{Model 3: Tonnetz}
-        More general models of tonal space reveal further developments in tonality.
-				\textbf{EXPANSION IN THIRD-DIRECTION}
+				The expansion of tonal material entails also an increase in mediantic relations.
+				Consequently, the usage of PCs diachronically spreads out in both the fifth
+				and the third dimensions of the Tonnetz.
+
 				\begin{figure}
 				\centering
 				\begin{subfigure}{\textwidth} % width of left subfigure
@@ -128,6 +134,7 @@
 					\includegraphics[width=\textwidth]{img/schubert_tonnetz.png}
 				\end{subfigure}
 			\end{figure}
+
       \end{block}
 
 			\begin{block}{Acknowledgements \& Contact}
@@ -137,7 +144,8 @@
         \end{wrapfigure}
 
         \small
-        This research is generously supported by the Latour Chair in Digital Musicology at EPFL.
+        This research is generously supported by the Latour Chair in Digital and Cognitive Musicology
+				at EPFL.
 				\normalsize
 				\begin{center}
 					\faicon{twitter}\;\textbf{@fabianmoss} \enspace|\enspace \faicon{envelope}\;\textbf{fabian.moss@epfl.ch}
